@@ -9,7 +9,8 @@ DB_FILE="animal_inventory.db"
 if [ -f "$DB_FILE" ]; then
 	echo "Database File already exists. Skipping Initialization."
 else
-	sqlite3 animal_inventory.db << EOF
+	# Initialize Database
+	sqlite3 "$DBFILE" << EOF
 
 	CREATE TABLE IF NOT EXISTS animals (
 		id INTEGER PRIMARY KEY,
