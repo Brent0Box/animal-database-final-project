@@ -19,7 +19,7 @@ echo "$search_results"
 
 # Verification loop
 while true; do
-	read -p "Is this the correct animal you want to update? (yes/no): " choice
+	read -p "Is this the correct animal? (yes/no): " choice
 	case $choice in
 		[Yy]* ) exit 0;;  # Exit the loop if the user confirms
 		[Nn]* ) exit 1;;  # Exit with failure if the user wants to choose another animal
