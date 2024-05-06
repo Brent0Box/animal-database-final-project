@@ -19,9 +19,7 @@ else
 		breed TEXT,
 		sex CHAR(1),
 		weight FLOAT,
-		age INT,
-		birth DATE,
-		death DATE
+		age INT
 		);
 
 	SELECT 'Animal Inventory Database Initialized.';
