@@ -54,7 +54,7 @@ insert_animal "$name" "$species" "$breed" "$sex" "$weight" "$age"
 
 # Check if animal was successfully added
 if [ $? -eq 0 ]; then
-    echo "New animal added to database successfully."
+    echo "New animal added to database successfully. Unique ID is "$id"."
 else
     echo "Failed to add new animal to the database."
 fi
