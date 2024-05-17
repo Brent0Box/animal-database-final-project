@@ -13,6 +13,12 @@ SELECT * FROM animals WHERE id='$id';
 EOF
 )
 
+# Check if results were found
+if [ -z "$search_results" ]; then
+    echo "No animal found with ID $id."
+    exit 1
+fi
+
 # Display animal information
 echo "Animal Information:"
 echo "$search_results"
@@ -22,7 +28,7 @@ while true; do
 	read -p "Is this the correct animal? (yes/no): " choice
 	case $choice in
 		[Yy]* ) exit 0;;  # Exit the loop if the user confirms
-		[Nn]* ) exit 1;;  # Exit with failure if the user wants to choose another animal
+		[Nn]* ) exit 1;;  # Exit with failure
 		* ) echo "Please answer yes or no.";;
 	esac
 done
