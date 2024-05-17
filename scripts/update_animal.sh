@@ -45,10 +45,12 @@ if ./animal_id_search.sh "$id_search"; then
 				;;
 			2)
 				read -p "Enter the new species: " new_species
+				new_species=$(echo "$new_species" | tr '[:upper:]' '[:lower:]')
 				update_animal "$id_search" "species" "$new_species"
 				;;
 			3)
 				read -p "Enter the new breed: " new_breed
+				new_breed=$(echo "$new_breed" | tr '[:upper:]' '[:lower:]')
 				update_animal "$id_search" "breed" "$new_breed"
 				;;
 			4)
@@ -87,5 +89,5 @@ if ./animal_id_search.sh "$id_search"; then
 		esac
 	done
 else
-    echo "Choose another animal to update."
+    echo "Exiting animal update function"
 fi

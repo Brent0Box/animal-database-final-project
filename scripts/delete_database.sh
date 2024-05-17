@@ -13,8 +13,10 @@ while true; do
 			    # Delete the database file
 			    rm "$DB_FILE"
 			    echo "Database file deleted."
+			    exit 0
 			else
 			    echo "Database file does not exist."
+			    exit 1
 			fi
 			;;
 		[nN]*)

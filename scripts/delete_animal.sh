@@ -32,5 +32,5 @@ EOF
 		esac
 	done
 else
-	echo "Choose another animal entry to delete."
+	echo "Exiting delete animal function."
 fi

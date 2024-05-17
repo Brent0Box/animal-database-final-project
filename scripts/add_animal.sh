@@ -49,11 +49,17 @@ until validate_numeric "$age"; do
     read -p "Age (years): " age
 done
 
+# Convert species and breed to lowercase
+species=$(echo "$species" | tr '[:upper:]' '[:lower:]')
+breed=$(echo "$breed" | tr '[:upper:]' '[:lower:]')
+
+
 # Call the function to insert the animal info into the database
 insert_animal "$name" "$species" "$breed" "$sex" "$weight" "$age"
 
 # Check if animal was successfully added
 if [ $? -eq 0 ]; then
+    id=$(sqlite3 "$DB_FILE" "SELECT id FROM animals ORDER BY id DESC LIMIT 1;")
     echo "New animal added to database successfully. Unique ID is "$id"."
 else
     echo "Failed to add new animal to the database."
